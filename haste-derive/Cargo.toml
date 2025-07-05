@@ -1,0 +1,14 @@
+[package]
+edition = "2024"
+name = "haste-derive"
+version = "0.1.0"
+description = "Derive macro for the haste crate."
+license = "MIT"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.95"
+quote = "1.0.40"
+syn = { version = "2.0.104", features = ["full"] }

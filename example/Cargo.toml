@@ -1,0 +1,12 @@
+[package]
+edition = "2024"
+name = "example"
+version = "0.1.0"
+publish = false
+
+[[bench]]
+name = "main"
+harness = false
+
+[dependencies]
+haste = { path = ".." }

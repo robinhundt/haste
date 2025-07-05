@@ -1,0 +1,14 @@
+[workspace]
+members = ["example", "haste-derive"]
+
+
+[package]
+edition = "2024"
+name = "haste"
+version = "0.1.0"
+description = "A work-in-progress benchmarking crate."
+license = "MIT"
+
+[dependencies]
+haste-derive = { version = "0.1.0", path = "haste-derive" }
+linkme = "0.3.33"
