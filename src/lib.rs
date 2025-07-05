@@ -1,6 +1,8 @@
 mod bencher;
+mod label;
 
 pub use crate::bencher::Bencher;
+pub use crate::label::Label;
 pub use haste_derive::haste;
 
 pub fn main() {

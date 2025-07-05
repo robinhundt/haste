@@ -1,5 +1,3 @@
-use std::hint::black_box;
-
 use haste::haste;
 
 fn fibonacci(n: u64) -> u64 {
@@ -10,7 +8,7 @@ fn fibonacci(n: u64) -> u64 {
     }
 }
 
-#[haste]
-fn bench_fib2() {
-    fibonacci(black_box(32));
+#[haste(args = [10, 32])]
+fn bench_fib2(arg: u64) {
+    fibonacci(arg);
 }

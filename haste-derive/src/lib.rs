@@ -12,6 +12,7 @@ mod func;
 #[proc_macro_attribute]
 pub fn haste(args: TokenStream, input: TokenStream) -> TokenStream {
     let args = parse_macro_input!(args as Args);
-    let expanded = expand(parse_macro_input!(input as BenchFunc));
+    let bench_func = parse_macro_input!(input as BenchFunc);
+    let expanded = expand(args, bench_func);
     TokenStream::from(expanded)
 }
