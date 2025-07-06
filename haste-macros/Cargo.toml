@@ -1,9 +1,10 @@
 [package]
-edition = "2024"
-name = "haste-derive"
-version = "0.1.0"
 description = "Derive macro for the haste crate."
-license = "MIT"
+name = "haste-macros"
+
+edition.workspace = true
+license.workspace = true
+version.workspace = true
 
 [lib]
 proc-macro = true

@@ -1,12 +1,13 @@
 [package]
 edition = "2024"
 name = "example"
-version = "0.1.0"
 publish = false
+version = "0.1.0"
 
 [[bench]]
-name = "main"
 harness = false
+name = "main"
 
 [dependencies]
-haste = { path = ".." }
+haste = { path = "..", features = ["tokio"] }
+tokio = { version = "1.46.1", features = ["full"] }
