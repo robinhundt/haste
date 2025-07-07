@@ -1,22 +1,45 @@
+mod bench_result;
 mod bencher;
+mod cli;
+mod config;
+#[cfg(all(doctest, feature = "tokio"))]
+mod doctests;
+mod label;
+mod sample;
+mod sampling_mode;
+pub mod throughput;
 
-pub use crate::bencher::Bencher;
-pub use haste_derive::haste;
+
+use crate::bench_result::Results;
+pub use crate::bencher::Haste;
+use crate::config::Config;
+pub use crate::label::Label;
+use clap::Parser;
+pub use haste_macros::bench;
+pub use throughput::Throughput;
 
 pub fn main() {
-    let mut bencher = Bencher::new();
+    let cli = cli::Cli::parse();
+    let mut results = Results::default();
+    let mut config = Config::default();
+    config.filter = cli.filter;
+
     for bench in __private::BENCHMARKS {
-        bench(&mut bencher);
+        let mut haste = Haste::new(&mut results);
+        haste.set_config(config.clone());
+        bench(haste);
     }
 }
 
 #[doc(hidden)]
 pub mod __private {
-    use crate::Bencher;
+    use crate::Haste;
 
     pub use linkme;
     pub use linkme::distributed_slice;
+    #[cfg(feature = "tokio")]
+    pub use tokio;
 
     #[distributed_slice]
-    pub static BENCHMARKS: [fn(&mut Bencher)];
+    pub static BENCHMARKS: [fn(Haste)];
 }
