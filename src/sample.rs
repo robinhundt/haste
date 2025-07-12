@@ -1,8 +1,8 @@
 use std::time::Duration;
 
-
 pub(crate) struct Sample {
     pub(crate) iter_time_ns: f64,
+    #[allow(dead_code)]
     pub(crate) sample_size: usize,
 }
 

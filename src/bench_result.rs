@@ -40,7 +40,7 @@ impl BenchResult {
         let mean = sum / samples.len() as f64;
 
         BenchResult {
-            label: label,
+            label,
             min_ns: min,
             max_ns: max,
             mean_ns: mean,
@@ -73,8 +73,7 @@ impl Display for BenchResult {
             f.write_char('\n')?;
             write!(
                 f,
-                "Throughput: Min: {:.2} | Mean: {:.2}| Max: {:.2}",
-                min, mean, max
+                "Throughput: Min: {min:.2} | Mean: {mean:.2}| Max: {max:.2}",
             )?;
         }
         Ok(())
