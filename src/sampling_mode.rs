@@ -31,9 +31,7 @@ impl SamplingMode {
                 sample_size: sample_size.ceil() as usize,
             }
         } else {
-            Self::Linear {
-                sampling_factor: sampling_factor,
-            }
+            Self::Linear { sampling_factor }
         }
     }
 

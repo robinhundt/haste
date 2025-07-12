@@ -56,7 +56,6 @@ impl<'a> Haste<'a> {
                 return;
             }
         }
-
         let (warmup_time, warmup_iters) = self.warmup(&mut func);
 
         let sampling_mode = SamplingMode::decide_mode(c, warmup_time, warmup_iters);
@@ -65,16 +64,17 @@ impl<'a> Haste<'a> {
 
         let bench_time_start = Instant::now();
         for sample_size in sampling_mode.sample_sizes(&self.config) {
-            let mut returns = Vec::with_capacity(sample_size);
+            let mut returns: Vec<R> = Vec::with_capacity(sample_size);
             let sample_start = Instant::now();
-            for _ in 0..sample_size {
-                // TODO how to better handle drop? This can introduce a lot of overhead,
-                // expecially when we have e.g. a page fault when pushing...
-                // Maybe we can write random data to the spare capacity beforehand or already
-                // use a vec for the returns of the warmup and reuse it here
-                returns.push(func());
-            }
+            // TODO how to better handle drop? This can introduce a lot of overhead,
+            // expecially when we have e.g. a page fault when pushing...
+            // Maybe we can write random data to the spare capacity beforehand or already
+            // use a vec for the returns of the warmup and reuse it here
+            returns.extend((0..sample_size).map(|_| func()));
             let sample_duration = sample_start.elapsed();
+            unsafe {
+                returns.set_len(sample_size);
+            }
             let sample = Sample::from_duration(sample_duration, sample_size);
             samples.push(sample);
         }
