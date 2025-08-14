@@ -51,10 +51,10 @@ impl<'a> Haste<'a> {
         let label = label.into();
         let c = &self.config;
 
-        if let Some(regex) = &c.filter {
-            if !regex.is_match(&label.to_string()) {
-                return;
-            }
+        if let Some(regex) = &c.filter
+            && !regex.is_match(&label.to_string())
+        {
+            return;
         }
         let (warmup_time, warmup_iters) = self.warmup(&mut func);
 
