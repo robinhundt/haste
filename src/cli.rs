@@ -1,5 +1,5 @@
 use clap::Parser;
-use regex::Regex;
+use regex_lite::Regex;
 
 #[derive(Parser)]
 pub(crate) struct Cli {
