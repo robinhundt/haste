@@ -1,4 +1,4 @@
-use std::time::{Duration, Instant};
+use std::{hint::black_box, time::{Duration, Instant}};
 
 #[cfg(feature = "tokio")]
 use tokio::runtime::Runtime;
@@ -67,10 +67,10 @@ impl<'a> Haste<'a> {
             let mut returns: Vec<R> = Vec::with_capacity(sample_size);
             let sample_start = Instant::now();
             // TODO how to better handle drop? This can introduce a lot of overhead,
-            // expecially when we have e.g. a page fault when pushing...
+            // especially when we have e.g. a page fault when pushing...
             // Maybe we can write random data to the spare capacity beforehand or already
             // use a vec for the returns of the warmup and reuse it here
-            returns.extend((0..sample_size).map(|_| func()));
+            returns.extend((0..sample_size).map(|_| black_box(func())));
             let sample_duration = sample_start.elapsed();
             let sample = Sample::from_duration(sample_duration, sample_size);
             samples.push(sample);
