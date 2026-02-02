@@ -72,9 +72,6 @@ impl<'a> Haste<'a> {
             // use a vec for the returns of the warmup and reuse it here
             returns.extend((0..sample_size).map(|_| func()));
             let sample_duration = sample_start.elapsed();
-            unsafe {
-                returns.set_len(sample_size);
-            }
             let sample = Sample::from_duration(sample_duration, sample_size);
             samples.push(sample);
         }
