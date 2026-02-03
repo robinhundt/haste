@@ -136,7 +136,7 @@ dependencies = [
 
 [[package]]
 name = "haste"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 dependencies = [
  "clap",
  "haste-macros",
@@ -147,7 +147,7 @@ dependencies = [
 
 [[package]]
 name = "haste-macros"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 dependencies = [
  "proc-macro2",
  "quote",
