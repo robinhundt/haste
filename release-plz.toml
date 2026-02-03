@@ -1,0 +1,13 @@
+[workspace]
+
+[[package]]
+name = "haste"
+version_group = "group1"
+changelog_include = ["haste-macros"]
+changelog_path = "./CHANGELOG.md"
+
+[[package]]
+name = "haste-macros"
+version_group = "group1"
+changelog_update = false
+git_release_enable = false
