@@ -15,9 +15,9 @@ fn add(a: u64, b: u64) -> u64 {
     a + b
 }
 
-#[haste::bench]
-fn bench_fib2() {
-    fibonacci(5);
+#[haste::bench(args = [2, 5])]
+fn bench_fib(arg: u64) {
+    fibonacci(arg);
 }
 
 #[haste::bench(args = [10, 100, 1000, 10000])]

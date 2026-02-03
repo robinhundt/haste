@@ -27,7 +27,7 @@ fn main() {
 ## Benchmarking private APIs
 You can use Haste to benchmark private functions of your library. Unfortunately, these can't be placed in modules annotated with `#[cfg(test)]` as the library is not compiled with the `test` cfg when running `cargo bench`.
 
-There are two workarounds for this:
+One workaround for this:
 ### "Private" cargo feature
 In your `Cargo.toml` declare e.g. an `_internal_benchmarking` feature
 ```toml
