@@ -61,9 +61,7 @@ impl<'a> Haste<'a> {
             return;
         }
         let (warmup_time, warmup_iters) = self.warmup(&mut func);
-
         let sampling_mode = SamplingMode::decide_mode(c, warmup_time, warmup_iters);
-
         let mut samples = Vec::with_capacity(c.sample_count);
 
         let bench_time_start = Instant::now();
@@ -109,7 +107,7 @@ impl<'a> Haste<'a> {
         let mut warmup_sample_size = 1;
         while warmup_start.elapsed() < self.config.warmup {
             for _ in 0..warmup_sample_size {
-                func();
+                black_box(func());
             }
             warmup_iters += warmup_sample_size;
             warmup_sample_size *= 2;
