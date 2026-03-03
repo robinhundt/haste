@@ -34,7 +34,7 @@ jobs:
           app-id: ${{ secrets.RELEASE_APP_ID }}
           private-key: ${{ secrets.RELEASE_PRIVATE_KEY }}
       - name: Run release-plz
-        uses: release-plz/action@e592230ad39e3ec735402572601fc621aa24355c # 0.5.124
+        uses: release-plz/action@f708778669256143d984cce4b23592637532e040 # 0.5.127
         with:
           command: release
         env:
@@ -60,7 +60,7 @@ jobs:
       - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # 2.8.2
       - *get-release-app-token
       - name: Run release-plz
-        uses: release-plz/action@e592230ad39e3ec735402572601fc621aa24355c # 0.5.124
+        uses: release-plz/action@f708778669256143d984cce4b23592637532e040 # 0.5.127
         with:
           command: release-pr
         env:
