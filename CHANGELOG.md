@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.3](https://github.com/robinhundt/haste/compare/haste-v0.1.0-alpha.2...haste-v0.1.0-alpha.3) - 2026-03-03
+
+### Other
+
+- Merge pull request #91 from robinhundt/dependabot/cargo/syn-2.0.116
+- *(deps)* bump clap from 4.5.57 to 4.5.59
+- *(deps)* bump syn from 2.0.114 to 2.0.116
+
 ## [0.1.0-alpha.2](https://github.com/robinhundt/haste/compare/haste-v0.1.0-alpha.1...haste-v0.1.0-alpha.2) - 2026-02-18
 
 ### Fixed
