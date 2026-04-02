@@ -4,7 +4,7 @@ members = ["example", "haste-macros"]
 [workspace.package]
 edition = "2024"
 license = "MIT"
-version = "0.1.0-alpha.2"
+version = "0.1.0-alpha.3"
 
 [package]
 description = "A work-in-progress benchmarking crate."
@@ -19,7 +19,7 @@ tokio = ["dep:tokio"]
 
 [dependencies]
 clap = { version = "4.6.0", features = ["derive"] }
-haste-macros = { version = "=0.1.0-alpha.2", path = "haste-macros" }
+haste-macros = { version = "=0.1.0-alpha.3", path = "haste-macros" }
 linkme = "0.3.35"
 regex-lite = "0.1.9"
 tokio = { version = "1.50.0", optional = true, features = ["rt-multi-thread"] }
