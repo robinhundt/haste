@@ -18,7 +18,7 @@ version.workspace = true
 tokio = ["dep:tokio"]
 
 [dependencies]
-clap = { version = "4.6.0", features = ["derive"] }
+clap = { version = "4.6.1", features = ["derive"] }
 haste-macros = { version = "=0.1.0-alpha.2", path = "haste-macros" }
 linkme = "0.3.35"
 regex-lite = "0.1.9"
