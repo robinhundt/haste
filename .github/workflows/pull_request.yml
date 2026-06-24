@@ -18,7 +18,7 @@ jobs:
       - run: cargo fmt --all --check
       - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
       - name: Install cargo-machete
-        uses: taiki-e/install-action@650c5ca14212efbbf3e580844b04bdccf68dac31 # 2.67.18
+        uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5 # 2.82.0
         with:
           tool: cargo-machete@0.9.1
       - run: cargo machete
