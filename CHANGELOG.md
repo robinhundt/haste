@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.3](https://github.com/robinhundt/haste/compare/haste-v0.1.0-alpha.2...haste-v0.1.0-alpha.3) - 2026-07-19
+
+### Other
+
+- *(deps)* bump dtolnay/rust-toolchain
+- Merge pull request #113 from robinhundt/dependabot/cargo/linkme-0.3.36
+- Merge pull request #118 from robinhundt/dependabot/cargo/tokio-1.52.3
+- Merge pull request #119 from robinhundt/dependabot/github_actions/actions/create-github-app-token-3.2.0
+- Merge pull request #127 from robinhundt/dependabot/github_actions/release-plz/action-0.5.130
+- Merge pull request #128 from robinhundt/dependabot/cargo/syn-2.0.118
+- Merge pull request #130 from robinhundt/dependabot/github_actions/actions/checkout-7.0.0
+- *(deps)* bump taiki-e/install-action from 2.67.18 to 2.82.7
+- Merge pull request #104 from robinhundt/dependabot/github_actions/Swatinem/rust-cache-2.9.1
+- Merge pull request #105 from robinhundt/dependabot/github_actions/dtolnay/rust-toolchain-3c5f7ea28cd621ae0bf5283f0e981fb97b8a7af9
+- *(deps)* bump actions/create-github-app-token from 2.2.1 to 3.0.0
+- *(deps)* bump release-plz/action from 0.5.127 to 0.5.128
+- *(deps)* bump quote from 1.0.44 to 1.0.45
+- Merge pull request #100 from robinhundt/dependabot/cargo/tokio-1.50.0
+- Merge pull request #98 from robinhundt/dependabot/cargo/clap-4.5.60
+- *(deps)* bump clap from 4.5.59 to 4.5.60
+- Merge pull request #91 from robinhundt/dependabot/cargo/syn-2.0.116
+- *(deps)* bump clap from 4.5.57 to 4.5.59
+- *(deps)* bump syn from 2.0.116 to 2.0.117
+- *(deps)* bump syn from 2.0.114 to 2.0.116
+
 ## [0.1.0-alpha.2](https://github.com/robinhundt/haste/compare/haste-v0.1.0-alpha.1...haste-v0.1.0-alpha.2) - 2026-02-18
 
 ### Fixed
