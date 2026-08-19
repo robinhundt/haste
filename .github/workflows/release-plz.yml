@@ -23,7 +23,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@2c7215f132e9ebf062739d9130488b56d53c060c # master
         with:
           toolchain: stable
-      - uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # 2.9.1
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # 2.9.2
       - &get-release-app-token
         # Generating a GitHub token, so that PRs and tags created by
         # the release-plz-action can trigger actions workflows.
@@ -57,7 +57,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@2c7215f132e9ebf062739d9130488b56d53c060c # master
         with:
           toolchain: stable
-      - uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # 2.9.1
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # 2.9.2
       - *get-release-app-token
       - name: Run release-plz
         uses: release-plz/action@e8792575c7f2366cf6ff3ccc33ead9ace5b691c7 # 0.5.130
